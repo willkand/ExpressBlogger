@@ -3,7 +3,7 @@ const router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.json({sucess: true, route: "users", message:"welcome to the users page"});
+  res.json({sucess: true, route: "blogs", message:"welcome to the blogs page"});
 });
 
 module.exports = router;

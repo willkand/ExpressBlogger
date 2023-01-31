@@ -9,6 +9,7 @@ const logger = require('morgan');
 // importing from routes/ folder 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const blogsRouter = require('./routes/blogs');
 
 //instantiate the actual express app
 const app = express();
@@ -32,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //we bind (associate) the routers to routes in our application
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/blogs', blogsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
