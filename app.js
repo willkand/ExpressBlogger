@@ -5,6 +5,12 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+//loads the contents of config.env
+require("dotenv").config({path: './config.env'});
+
+var { mongoConnect } = require('./mongo.js');
+mongoConnect();
+
 //setup router for each set of routes 
 // importing from routes/ folder 
 const indexRouter = require('./routes/index');
@@ -13,6 +19,7 @@ const blogsRouter = require('./routes/blogs');
 
 //instantiate the actual express app
 const app = express();
+
 
 // view engine setup
 // sets application settings. (things we can access across the application)
@@ -49,7 +56,9 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
+}); 
+
+
 
 // app.listen(port, () => {
 //   console.log(`ExpressBlogger app listening on port ${port}`)
