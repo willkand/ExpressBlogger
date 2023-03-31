@@ -1,22 +1,17 @@
-
 // Note: If we have a function, we want to return similar values for all possible return cases.
 const validateUserData = (userData) => {
 
 	/* // EXAMPLE of .filter()
 	const array = ["string", 2, true, "other string"]
-
 	const filteredArray = array.filter((arrayItem)=>{
 		// .filter() will loop through an array we provide and will only return items that match true for the condition that we define
-
 		// For .filter() the return value must be a boolean and should be true for items that we want to keep
 		if (typeof(arrayItem) === 'string') {
 			return true;
 		} else {
 			return false;
 		}
-
 	})
-
 	console.log("array ", array)
 	console.log("filteredArray ", filteredArray) */
 
